@@ -99,6 +99,7 @@ function getPasswordOptions() {
     alert ("The password you have entered does not meet the length requirements");
   } else {
     alert ("The password you have entered meets the length requirements") 
+    return;
   }
 
   // checking if special characters have been included
@@ -119,34 +120,70 @@ console.log(options);
 // Function for getting a random element from an array
 
 function getRandomSpecial(specialCharacters) {
-  return specialCharacters (Math.floor(Math.random() * 23)); // Math.floor() // rounded down
-}
-console.log(getRandomSpecial);
+//   return specialCharacters (Math.floor(Math.random() * 23)); // Math.floor() // rounded down
+// }
+// console.log(getRandomSpecial);
 
-function getRandomNumeric(numericCharacters) {
-  return numericCharacters (Math.floor(Math.random() * 10));
-}
-console.log(getRandomNumeric);
+// function getRandomNumeric(numericCharacters) {
+//   return numericCharacters (Math.floor(Math.random() * 10));
+// }
+// console.log(getRandomNumeric);
 
-function getRandomLower(lowerCasedCharacters) {
-  return lowerCasedCharacters (Math.floor(Math.random() * 26));
-}
-console.log(getRandomLower);
+// function getRandomLower(lowerCasedCharacters) {
+//   return lowerCasedCharacters (Math.floor(Math.random() * 26));
+// }
+// console.log(getRandomLower);
 
-function getRandomUpper(upperCasedCharacters) {
-  return upperCasedCharacters (Math.floor(Math.random() * 26));
+// function getRandomUpper(upperCasedCharacters) {
+//   return upperCasedCharacters (Math.floor(Math.random() * 26));
+// }
+// console.log(getRandomUpper);
+
+  var allCharacters =[]; 
+  // making one array with all characters included
+  // push adds new items to the end of an array
+
+  if (specialCharacters) {
+    allCharacters.push(specialCharacters);
+  }
+  if (numericCharacters) {
+    allCharacters.push(numericCharacters);
+  }
+  if (lowerCasedCharacters) {
+    allCharacters.push(lowerCasedCharacters);
+  }
+  if (upperCasedCharacters) {
+    allCharacters.push(upperCasedCharacters);
+  }
+
+  if (allCharacters === 0) { // checking to see if there is at least 1 charcter type in the user password
+    alert ("Please use at least one character in your password!");  
+  } else {
+    alert ("You have successfully used at least one character type in your password.");
+    return;
+  }
+
+  var password = '';
+  for (var i = 0; i < allCharacters.length; i++) {
+    var randomArray = math.floor(math.random()*allCharacters.length); // randomly selecting a character array
+    var selectedArray = allCharacters[randomArray]; // defining that selected array
+    var randomCharacter = math.floor(math.random()*selectedArray.length); // randomly selecting a character in that array
+    
+    password = password + selectedArray[randomCharacter]; // adding the random character from the random array to password
+  }
 }
-console.log(getRandomUpper);
+
+var random = getRandomSpecial();
+console.log(random);
 
 
 // Function to generate password with user input
-// function generatePassword() {
-//   var password = "";
-//   for (var i = 0; i < length; i++) {
+function generatePassword() {
+  for (var i = 0; i < specialCharacters.length; i++) {
 //     password = password + 
 //   }
   
-// }
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');

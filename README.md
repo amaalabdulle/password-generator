@@ -15,7 +15,7 @@ To generate a random password, the user will first press the generate button. Th
 
 Note: If the user has no entered a length between 8 and 128 chracaters and chosen at least one special character, then they will not be able to move forware with their generated password untill they do.
 
-![alt text](assets/images/generated-password.png)
+![alt text](starter/assets/images/generated-password.png)
 
 Link to deployed website: https://amaalabdulle.github.io/password-generator/
 
